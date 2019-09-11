@@ -1,0 +1,14 @@
+---
+- name: Create dir for Ramdisk
+  file:
+    path: "{{ ramdisk_disk_path }}"
+    state: directory
+    mode: '0777'
+
+- name: mount Ramdisk to fs
+  mount:
+    src: tmpfs
+    path: "{{ ramdisk_disk_path }}"
+    fstype: tmpfs
+    opts: "size={{ ramdisk_size }}"
+    state: "{{ ramdisk_state }}"

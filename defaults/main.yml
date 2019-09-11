@@ -1,0 +1,4 @@
+---
+ramdisk_disk_path: "/tmp/ramdisk"
+ramdisk_size: "512M"
+ramdisk_state: "mounted"
