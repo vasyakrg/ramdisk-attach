@@ -5,10 +5,14 @@
     state: directory
     mode: '0777'
 
-- name: mount Ramdisk to fs
+- name: Create Ramdisk to fs and write info to /etc/fstab
   mount:
     src: tmpfs
     path: "{{ ramdisk_disk_path }}"
     fstype: tmpfs
-    opts: "size={{ ramdisk_size }}"
+    opts: "size={{ ramdisk_size }},nosuid,nodev,noexec"
     state: "{{ ramdisk_state }}"
+
+- name: Mount Ramdisk
+  shell: mount tmpfs
+  when: ramdisk_state == 'present'

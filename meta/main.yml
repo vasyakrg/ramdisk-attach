@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Vassiliy Yegorov
-  description: role for Generate certbot SSL certonly for Kerio-connect
+  description: role for create and mount RAM-disk
   company: github.com/vasyakrg
 
   # If the issue tracker for your role is not on github, uncomment the
